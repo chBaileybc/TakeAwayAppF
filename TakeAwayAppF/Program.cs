@@ -119,26 +119,8 @@ namespace TakeAwayApp
 
                 }
 
-                double totalPrice = 0;
-
-                foreach (var pizza in selectedPizzas)
-
-                {
-
-                    totalPrice += pizzaPrices[pizza];
-
-                }
-
-                totalPrice = totalPrice + AdditionalPrice;
-
-                Console.WriteLine($"Delivery Charge: ${AdditionalPrice:F2}");
-
-                Console.WriteLine($"Total Price: ${totalPrice:F2}");
-
-                FinalPrice = totalPrice;
-
                 //get user's choice
-                Console.WriteLine("Press <Enter> to select more pizza's for your order or press 'XXX' to finish ordering");
+                Console.WriteLine("Press <Enter> to continue or press 'XXX' to finish");
                 string userInput = Console.ReadLine();
                 Console.Clear();
 
@@ -157,6 +139,24 @@ namespace TakeAwayApp
                 }
 
             }
+
+            double totalPrice = 0;
+
+            foreach (var pizza in selectedPizzas)
+
+            {
+
+                totalPrice += pizzaPrices[pizza];
+
+            }
+
+            totalPrice = totalPrice + AdditionalPrice;
+
+            FinalPrice = totalPrice;
+
+            Console.WriteLine($"Delivery Charge: ${AdditionalPrice:F2}");
+
+            Console.WriteLine($"Total Price: ${totalPrice:F2}");
 
             Console.WriteLine("Selected Pizzas:\n");
 
